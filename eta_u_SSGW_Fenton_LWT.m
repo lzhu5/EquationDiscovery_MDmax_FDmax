@@ -51,6 +51,12 @@ ZZ = [xs(1)+1i*linspace(-h, (ys(1)-dal)*scaleLength, 10)/scaleLength] ;  % umax
 
 
 %% Fenton's
+tic
+% % [eta, uvel, theta, zele, uvel_surface] = StreamFunction_surface_u (H, h, T, plottype, phase_theta, zlocation)
+% [~, uvel, theta, zele, uvel_fenton_surface] = StreamFunction_surface_u (H, h, T, 'temporal', 0, 0) ; 
+% toc
+
+% plot(theta, eta, ':r', 'linewidth', 2)
 [~, uvel, ~, zele] = StreamFunction_surface_u (H, h, T, 'vertical', 0, 0) ; 
 [eta, ~, theta, ~] = StreamFunction_surface_u (H, h, T, 'temporal', 0, -h) ; 
 
@@ -69,13 +75,10 @@ set (gca, 'fontsize', 22)
  
 figure; hold on; box on
 plot(theta_LWT, eta_LWT, '-k', 'LineWidth', 3)
-plot(theta_LWT+2*pi, eta_LWT, '-k', 'LineWidth', 3, 'HandleVisibility', 'off')
 plot(k*scaleLength*xs, scaleLength*ys, '-b', 'LineWidth', 3)
-plot(k*scaleLength*xs+2*pi, scaleLength*ys, '-b', 'LineWidth', 3, 'HandleVisibility', 'off')
 plot(theta, eta, '-r', 'LineWidth', 3)
-plot(theta+2*pi, eta, '-r', 'LineWidth', 3, 'HandleVisibility', 'off')
-legend('LWT', 'SSGW', 'Fenton', 'orientation', 'vertical')
-xlim([0, 4*pi])
+legend('SSGW', 'Fenton', 'LWT', 'orientation', 'vertical')
+xlim([0, 2*pi])
 xlabel('kx - \omegat')
 ylabel('\eta (m)')
 set (gca, 'fontsize', 22)
