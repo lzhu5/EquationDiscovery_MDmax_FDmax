@@ -51,12 +51,6 @@ ZZ = [xs(1)+1i*linspace(-h, (ys(1)-dal)*scaleLength, 10)/scaleLength] ;  % umax
 
 
 %% Fenton's
-tic
-% % [eta, uvel, theta, zele, uvel_surface] = StreamFunction_surface_u (H, h, T, plottype, phase_theta, zlocation)
-% [~, uvel, theta, zele, uvel_fenton_surface] = StreamFunction_surface_u (H, h, T, 'temporal', 0, 0) ; 
-% toc
-
-% plot(theta, eta, ':r', 'linewidth', 2)
 [~, uvel, ~, zele] = StreamFunction_surface_u (H, h, T, 'vertical', 0, 0) ; 
 [eta, ~, theta, ~] = StreamFunction_surface_u (H, h, T, 'temporal', 0, -h) ; 
 
