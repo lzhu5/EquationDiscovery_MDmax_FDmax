@@ -70,8 +70,6 @@ xlim([0, 2])
 ylim([-inf, 1.2])
 xlabel('u_{max} (m/s)')
 ylabel('z (m)')
-set(gcf, 'Position', [ 2409         164         338         474])
-set (gca, 'fontsize', 22)
  
 figure; hold on; box on
 plot(theta_LWT, eta_LWT, '-k', 'LineWidth', 3)
@@ -81,7 +79,6 @@ legend('SSGW', 'Fenton', 'LWT', 'orientation', 'vertical')
 xlim([0, 2*pi])
 xlabel('kx - \omegat')
 ylabel('\eta (m)')
-set (gca, 'fontsize', 22)
 
 rmpath Fenton/ 
 rmpath SSGW/
